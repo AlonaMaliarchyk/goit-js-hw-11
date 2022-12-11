@@ -1,0 +1,130 @@
+a {
+    list-style: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    height: 30px;
+    color: darkslateblue;
+    border-radius: 2px
+}
+
+form.example input[type=text]:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px;
+}
+
+/* Style the submit button */
+form.example button {
+    float: left;
+    background: lightgray;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    height: 30px;
+    width: 35px;
+    cursor: pointer;
+    border-radius: 2px
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    box-shadow:
+        0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    background-color: #483DEA;
+    border-radius: 3px;
+}
+
+svg {
+    width: 15px;
+    height: 15px;
+}
+
+.card-img {
+    /* max-width: 320px; */
+    max-height: 320px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.gallery {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 12px;
+    justify-content: center;
+}
+
+
+.photo-card:hover {
+    transform: scale(1.03);
+}
+
+.photo-card {
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.is-hidden {
+    display: none;
+}
+
+.info {
+    display: flex;
+    padding: 8px;
+}
+
+.info-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.info-item {
+    text-align: center;
+    color: black;
+    border-bottom: transparent;
+}
+
+.load-more {
+    color: rgba(255, 255, 255, 0.921);
+    background-color: rgba(57, 57, 204, 0.96);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px;
+}
+
+.load-more:hover {
+    background-color: rgba(78, 78, 209, 0.96);
+}
