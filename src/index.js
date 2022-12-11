@@ -31,7 +31,6 @@ async function handleSubmit(event) {
 
 async function loadMore() {
     let result = await fetchImages(searchTerm, page); 
-	console.log('after response', result);
 	gallery.insertAdjacentHTML("beforeend", createGalleryMarckup(result.data.hits));
 	if (page === 1 && result.data.totalHits > 0) {
 		Notiflix.Notify.success(`Hooray! We found ${result.data.totalHits} images.`);
@@ -45,10 +44,9 @@ async function loadMore() {
 		Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.", { showOnlyTheLastOne: true });
 	} else if (imgeCount === 0) {
 		Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
-	} else if (imgeCount > 0 && imgeCount < result.data.totalHits) { 
+	} else if (imgeCount > 0 && imgeCount < result.data.totalHits && imgeCount === 1) { 
 		loadMoreBtn.classList.remove('is-hidden');    
 	}
-	console.log(imgeCount);
 }
 
 async function fetchImages(searchTerm, page) { 
@@ -95,14 +93,6 @@ function createGalleryMarckup(response) {
 
 const option = {
     captionsData: 'alt',
-    // captionDelay: 250,
-    // sourceAttr: 'href',
-    // overlay: true,
-    // nav: true,
-    // navText: ['←','→'],
-    // captions: true,
-    // // refresh()
 }
 
 let lightbox = new SimpleLightbox('.gallery a', option);
-console.log(lightbox);
