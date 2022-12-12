@@ -17,7 +17,7 @@ export class ImageFetchservice {
         this.#IMAGE_TYPE = 'photo';
         this.#ORIENTATION = 'vertical';
         this.#SAFESEARCH = 'true';
-        this.#PER_PAGE = 200;
+        this.#PER_PAGE = 40;
         this.MAX_RESULTS_LIMIT = 500;
     }
 
