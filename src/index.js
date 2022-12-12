@@ -44,8 +44,8 @@ async function loadMore() {
 		Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.", { showOnlyTheLastOne: true });
 	} else if (imgeCount === 0) {
 		Notiflix.Notify.failure("Sorry, there are no images matching your search query. Please try again.");
-	} else if (imgeCount > 0 && imgeCount < result.data.totalHits && imgeCount === 1) { 
-		loadMoreBtn.classList.remove('is-hidden');    
+	} else if (imgeCount > 0 && imgeCount < result.data.totalHits ) { 
+        loadMoreBtn.classList.remove('is-hidden');   
 	}
 }
 
